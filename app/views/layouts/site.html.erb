@@ -2,15 +2,14 @@
 <html><!-- InstanceBegin template="/Templates/AustinW3c.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title><%= @configuration[:site_name] + ": " + controller.controller_name + ": " 
-    + controller.action_name %></title>
+  <title><%= "#{@conf[:site_name]}: #{controller.controller_name}: #{controller.action_name}" %></title>
   <%= stylesheet_link_tag 'main' %>
 </head>
 <body>
 <div class="page">
   <div class="head">
     <div class="logo">
-      <a href="/"><img src="images/logo5.jpg" alt="<%= @configuration[:site_name] %> logo"></a>
+      <a href="/"><img src="images/logo5.jpg" alt="<%= @conf[:site_name] %> logo"></a>
     </div>
     
     <div class="wallpaper">
@@ -21,7 +20,7 @@
     <div class="navigation"> |
     <% for page in @main_pages %>
       <a href='pages/<%=page.id%>'><%=page.title%></a> |
-    <% end %> |
+    <% end %> 
     </div>
   </div>
 

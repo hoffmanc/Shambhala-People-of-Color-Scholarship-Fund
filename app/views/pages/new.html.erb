@@ -12,6 +12,10 @@
     <%= f.text_area :content %>
   </p>
   <p>
+    <%= f.label :parent_id %><br />
+    <%= collection_select(:page, :parent_id, Page.all, :id, :title, {:prompt => true}) %>
+  </p>
+  <p>
     <%= f.submit 'Create' %>
   </p>
 <% end %>
