@@ -21,7 +21,7 @@ body {
 	height: 100%;
 	margin: 0px;
 	padding: 0px;
-	background: transparent url("images/bg5.gif") repeat 0px 0px;
+	background: transparent url("/images/bg5.gif") repeat 0px 0px;
 	font-family: Verdana, Arial, Helvetica, Geneva, SunSans-Regular, sans-serif;
 	font-size: 11px;
 	line-height: 1.45;
@@ -102,12 +102,12 @@ a:hover, a:active {
 .asmcLogo {
 	width: 170px;
 	height: 170px;
-	background: transparent url('images/bg5.gif') repeat 0px 0px;
+	background: transparent url('/images/bg5.gif') repeat 0px 0px;
 }
 .wallpaper {
 	width: 600px;
 	height: 170px;
-	background: transparent url('images/header_index_7.jpg') repeat 0px 0px;
+	background: transparent url('/images/header_index_7.jpg') repeat 0px 0px;
 }
 .asmcLogo a, .asmcLogo img, .wallpaper a, .wallpaper img {
 	display: block;
@@ -121,7 +121,7 @@ a:hover, a:active {
 	clear: both;
 	margin: 0px auto;
 	padding: 3px 0px;
-	background: transparent url('images/menu5.gif') repeat 0px 0px;
+	background: transparent url('/images/menu5.gif') repeat 0px 0px;
 	text-align: center;
 	font-size: 13px;
 	line-height: 1.36;
@@ -150,7 +150,7 @@ a:hover, a:active {
 	
 	width: 141px;
 	padding: 18px 12px 18px 18px;
-    background: #fff url('images/vertline2.gif') repeat-y 100% 0px;
+    background: #fff url('/images/vertline2.gif') repeat-y 100% 0px;
 	margin-right: -1px;
 }
 .subnav {
@@ -189,7 +189,7 @@ a:hover, a:active {
 	_height: 425px;
 	margin-left: 170px;
 	padding-top: 6px;
-	background: #fff url('images/vertline2.gif') repeat-y 0px 0px;
+	background: #fff url('/images/vertline2.gif') repeat-y 0px 0px;
 }
 .main ul {
 	list-style-type: disc;
@@ -318,7 +318,7 @@ a:hover, a:active {
 	margin: 6px 10px;
 }
 .dots {
-	background-image: url("images/vertline_orange.gif");
+	background-image: url("/images/vertline_orange.gif");
 }
 
 
