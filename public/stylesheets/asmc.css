@@ -1,0 +1,380 @@
+/*
+A new, standards compliant set of styles for the site.
+*/
+
+/* reset */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote {
+	margin: 0px; padding: 0px;
+}
+fieldset, img {border: 0px;}
+address, caption, cite, code, dfn, em, strong, th, var {font-style: normal; font-weight: normal;}
+ol, ul {list-style: none;}
+caption, th {text-align: left;}
+h1, h2, h3, h4, h5, h6 {font-size: 100%; font-weight: normal;}
+q:before, q:after {content: '';}
+abbr, acronym {border: 0px;}
+
+
+/* default */
+html {height: 100%; margin: 0px; padding: 0px;}
+body {
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	background: transparent url("images/bg5.gif") repeat 0px 0px;
+	font-family: Verdana, Arial, Helvetica, Geneva, SunSans-Regular, sans-serif;
+	font-size: 11px;
+	line-height: 1.45;
+	color: #222;
+	text-align: center;
+}
+table {font-size: 100%;}
+
+h2 {
+	margin: 12px 0px 6px;
+	font-size: 16px;
+	font-family:"Trebuchet MS", Arial, sans-serif;
+	font-weight: bold;
+}
+
+p {
+	margin: 8px 0px;
+}
+
+strong, label, th {font-weight: bold;}
+em {font-style: italic;}
+img {
+	border: 0px none;
+}
+.image {
+	text-align: center;
+}
+.image img {
+	display: block;
+}
+.imageRight {
+	float: right;
+	margin: 12px 0px 12px 12px;
+}
+.imageLeft {
+	float: left;
+	_display: inline;
+	margin: 12px 12px 12px 0px;
+}
+.image p {
+	font-size: 9px;
+	line-height: 1;
+	color: #666;
+}
+
+a:link {
+	color: #06F;
+	text-decoration: none;
+}
+a:visited {
+	color: #26D;
+	text-decoration: none;
+}
+a:hover, a:active {
+	color: #DF3801;
+	text-decoration: underline;
+}
+
+
+
+/* base layout */
+.page {
+	width: 770px;
+	margin: 0px auto;
+	background: #fff;
+	text-align: left;
+}
+
+
+
+.head {
+	overflow: hidden;
+	*zoom: 1;
+}
+.head .asmcLogo, .head .wallpaper {
+	float: left;
+}
+.asmcLogo {
+	width: 170px;
+	height: 170px;
+	background: transparent url('images/bg5.gif') repeat 0px 0px;
+}
+.wallpaper {
+	width: 600px;
+	height: 170px;
+	background: transparent url('images/header_index_7.jpg') repeat 0px 0px;
+}
+.asmcLogo a, .asmcLogo img, .wallpaper a, .wallpaper img {
+	display: block;
+	width: 100%;
+	height: 100%;	
+}
+
+
+
+.navigation {
+	clear: both;
+	margin: 0px auto;
+	padding: 3px 0px;
+	background: transparent url('images/menu5.gif') repeat 0px 0px;
+	text-align: center;
+	font-size: 13px;
+	line-height: 1.36;
+	color: #EBDCA7;
+}
+.navigation a:link, .navigation a:visited {
+	color: #fff;
+	text-decoration: none;
+}
+.navigation a:hover, .navigation a:active {
+	color: #96BCF5;
+	text-decoration: none;
+}
+
+
+
+.body {
+	padding-top: 19px;
+	background: #fff;
+	
+	_position: relative;
+}
+
+.sidebar {
+	float: left;
+	
+	width: 141px;
+	padding: 18px 12px 18px 18px;
+    background: #fff url('images/vertline2.gif') repeat-y 100% 0px;
+	margin-right: -1px;
+}
+.subnav {
+	padding-top: 22px;	
+	line-height: 1.27;
+}
+/* temp fix until I get the sidebars cleaned up */
+.subnav .subnav {
+	padding: 0px;
+}
+.subnav p, .subnav em {
+	display: block;
+	margin: 0px 0px 9px;
+}
+.sidebar form {
+	margin-bottom: 22px;
+}
+.sidebar input[type="text"] {
+	border: 1px solid #999;
+}
+.sidebar .row {
+	display: block;
+	margin: 2px 0px;
+}
+.sidebar .row label {
+	display: block;
+}
+.sidebar .row input {
+	width: 110px;
+}
+
+
+
+.main {
+	min-height: 425px;
+	_height: 425px;
+	margin-left: 170px;
+	padding-top: 6px;
+	background: #fff url('images/vertline2.gif') repeat-y 0px 0px;
+}
+.main ul {
+	list-style-type: disc;
+}
+.main ol {
+	list-style-type: decimal;
+}
+.main ol li, .main ul li {
+	margin-left: 24px;
+}
+.mainBody {
+	padding: 0px 12px 18px;
+	_zoom: 1;
+}
+.insert {
+	float: right;
+	width: 165px;
+	margin: 0px 0px 12px 12px;
+}
+
+
+
+.footer {
+	clear: both;
+	padding: 18px 0px 6px;
+	text-align: center;
+	overflow: hidden;
+	*zoom: 1;
+}
+.footer .bottomNav {
+	font-size: 10px;
+	margin-bottom: 14px;
+}
+.footer .seo {
+	float: left;
+	_display: inline;
+	width: 107px;
+	margin: 0px 13px 0px 20px;
+	color: #888;
+	font-size: 9px;
+	line-height: 1;
+}
+.footer img {
+	float: left;
+	_display: inline;
+	width: 60px;
+	height: 60px;
+	margin-bottom: 38px;
+}
+.footer .contact span {
+	margin-right: 17px;
+}
+.footer .copyright {
+	display: block;
+	font-size: 9px;
+	line-height: 1; 
+	color: #888;
+}
+.footer a .copyright {
+	display: inline;
+}
+
+
+
+
+.title {
+	font-size: 24px;
+	font-family: "Trebuchet MS", Arial, sans-serif;
+	color: #DF3801;
+	margin-bottom: 13px;
+	
+	letter-spacing:0.05em;
+	line-height:24px;
+}
+/* keep */
+.subhead {
+	margin: 9px 0px 3px;
+	font-size: 14px;
+	font-family:"Trebuchet MS", Arial, sans-serif;
+	font-weight: bold;
+	color: #4a4a4a;
+	letter-spacing: 0.05em;
+}
+
+.list1 {
+	font-family: Tahoma, Arial, sans-serif;
+	font-size: 13px;
+	font-weight: bold; 
+}
+.list2 {
+	font-family: Tahoma, Arial, sans-serif;
+	font-size: 12px;
+	font-weight: bold; 
+}
+
+.photocredit {
+	font-size: 10px;
+	line-height: 1.1;
+	color: #666;
+}
+.pullquote {
+	font-size: 13px;
+	font-family: Georgia, serif;
+	margin: 9px 20px;
+	line-height: 1.6;
+	font-style: italic;
+	color: #765;
+}
+.pullquoteauthor {
+	font-size: 12px;
+	font-family: Georgia, serif;
+	line-height: 18px;
+	color: #765;
+	text-align: right;
+	margin-top: -2px;
+	margin-right: 40px;
+}
+
+/* keep */
+.small {
+	font-size: 10px;
+	line-height: 1.18; 
+}
+/* keep */
+.indent {
+	margin: 6px 10px;
+}
+.dots {
+	background-image: url("images/vertline_orange.gif");
+}
+
+
+table.list1 td {
+	padding: 4px;
+	font-size: 12px;
+}
+
+.style1 {
+	font-family: "Times New Roman", Times, serif;
+	font-style: italic;
+}
+
+
+
+/* Less padding in sidebar for homepage so forms have enough room. */
+#page-home .sidebar {
+	width: 146px;
+	padding: 18px 12px;
+}
+#page-home .style2 {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+}
+
+
+
+/* Highlight the currently selected list of programs.  Class added by JS */
+#sidebar-programs a.selected, #sidebar-programs a.selected:link,
+#sidebar-programs a.selected:visited, #sidebar-programs a.selected:active, 
+#sidebar-programs a.selected:hover, #sidebar-programs a.selected:focus {
+	color: #555;
+	cursor: default;
+	text-decoration: none;
+}
+
+
+
+
+@media print {
+	
+	html, body {
+		height: auto;
+		background: none;
+	}
+	.page, .body {
+		width: auto;
+		height: auto;
+	}
+	.head, .navigation, .sidebar, .footer .seo, .footer img, .bottomNav,
+	div.copyright {
+		display: none;
+	}
+	.main {
+		background: none;
+		margin-left: 0px;
+	}
+	
+}
