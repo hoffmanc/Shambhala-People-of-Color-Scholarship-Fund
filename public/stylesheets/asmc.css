@@ -90,13 +90,11 @@ a:hover, a:active {
 	text-align: left;
 }
 
-
-
 .head {
 	overflow: hidden;
 	*zoom: 1;
 }
-.head .asmcLogo, .head .wallpaper {
+.head .logo, .head .wallpaper {
 	float: left;
 }
 .asmcLogo {
@@ -109,13 +107,11 @@ a:hover, a:active {
 	height: 170px;
 	background: transparent url('/images/header_index_7.jpg') repeat 0px 0px;
 }
-.asmcLogo a, .asmcLogo img, .wallpaper a, .wallpaper img {
+.logo a, .logo img, .wallpaper a, .wallpaper img {
 	display: block;
 	width: 100%;
 	height: 100%;	
 }
-
-
 
 .navigation {
 	clear: both;

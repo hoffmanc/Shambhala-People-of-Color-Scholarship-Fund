@@ -2,7 +2,7 @@
 <html><!-- InstanceBegin template="/Templates/AustinW3c.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title><%= "#{@conf[:site_name]}: #{controller.controller_name}: #{controller.action_name}" %></title>
+  <title><%= "#{@conf[:site_name]} - #{controller.controller_name.capitalize} - #{controller.action_name.capitalize}" %></title>
   <%= stylesheet_link_tag 'main' %>
   <%= stylesheet_link_tag 'asmc' %>
 </head>
@@ -10,17 +10,17 @@
 <div class="page">
   <div class="head">
     <div class="logo">
-      <a href="/"><img src="images/logo5.jpg" alt="<%= @conf[:site_name] %> logo"></a>
+      <a href="/"><img src="/images/logo5.jpg" alt="<%= @conf[:site_name] %> logo"></a>
     </div>
     
     <div class="wallpaper">
-      <img src="images/header_index_7_000.jpg" alt="background decoration" 
+      <img src="/images/header_index_7_000.jpg" alt="background decoration" 
         width="600" height="170"/>
     </div>
     
     <div class="navigation"> |
     <% for page in @main_pages %>
-      <a href='pages/<%=page.id%>'><%=page.title%></a> |
+      <%= link_to page.title, page_path(page) %> |
     <% end %> 
     </div>
   </div>
@@ -34,13 +34,17 @@
     <div class="main">
       <div class="mainBody">
         <div id="page-home">
+          <%= yield %>
         </div>
       </div>
     </div>
   </div>
 
   <div class="footer">
-    <img src="images/footer-sun.gif" alt="shambhala sun logo">
+    <div class="seo">Learn more about <a href="http://www.shambhala.org">meditation</a> and <a href="http://www.shambhala.org/buddhism.html">buddhism</a> at shambhala.org</div>
+    <img src="/images/footer-sun.gif" alt="shambhala sun logo">
+    <p>Content &copy; <%= @conf[:site_name] %></p>
+    <p>Layout &copy; Blue Mandala</p>
   </div>
 </div>
 </body>
