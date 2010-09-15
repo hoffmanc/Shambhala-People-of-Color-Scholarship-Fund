@@ -32,6 +32,13 @@
     </div>
 
     <div class="main">
+      <div class="user">
+      <% if self.current_user %>
+        Logged in as <%= link_to self.current_user.login, edit_user_path(self.current_user) %> 
+      <% else %>
+        <%= link_to "Log in", :controller => :session, :action => :new %>
+      <% end %>
+      </div>
       <div class="mainBody">
         <div id="page-home">
           <%= yield %>

@@ -351,8 +351,10 @@ table.list1 td {
 	text-decoration: none;
 }
 
-
-
+div.user {
+  float: right;
+  margin-right: 1em;
+}
 
 @media print {
 	
