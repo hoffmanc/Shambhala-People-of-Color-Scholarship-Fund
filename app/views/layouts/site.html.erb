@@ -5,6 +5,7 @@
   <title><%= "#{@conf[:site_name]} - #{controller.controller_name.capitalize} - #{controller.action_name.capitalize}" %></title>
   <%= stylesheet_link_tag 'main' %>
   <%= stylesheet_link_tag 'asmc' %>
+  <%= stylesheet_link_tag 'site' %>
 </head>
 <body>
 <div class="page">
@@ -32,6 +33,7 @@
     </div>
 
     <div class="main">
+      <%= flash_helper %>
       <div class="user">
       <% if self.current_user %>
         Logged in as <%= link_to self.current_user.login, edit_user_path(self.current_user) %> 
