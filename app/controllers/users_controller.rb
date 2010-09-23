@@ -1,11 +1,7 @@
 class UsersController < ApplicationController
-  # Be sure to include AuthenticationSystem in Application Controller instead
-  include AuthenticatedSystem
-  
   # Protect these actions behind an admin login
   # before_filter :admin_required, :only => [:suspend, :unsuspend, :destroy, :purge]
   before_filter :find_user, :only => [:suspend, :unsuspend, :destroy, :purge]
-  
 
   # render new.rhtml
   def new
@@ -23,6 +19,28 @@ class UsersController < ApplicationController
     else
       flash[:error]  = "We couldn't set up that account, sorry.  Please try again, or contact an admin (link is above)."
       render :action => 'new'
+    end
+  end
+
+  def show
+    redirect_to edit_user_path
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    logout_keeping_session!
+    @user = User.find(params[:id])
+    @user.update_attributes(params[:user])
+    @user.save()
+    if @user.errors.empty?
+      redirect_back_or_default('/')
+      flash[:notice] = "Successfully changed settings.  You have been logged out."
+    else
+      flash[:error] = "Something went wrong"
+      render :action => 'edit'
     end
   end
 

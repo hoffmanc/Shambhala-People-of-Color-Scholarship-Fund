@@ -35,11 +35,7 @@
     <div class="main">
       <%= flash_helper %>
       <div class="user">
-      <% if self.current_user %>
-        Logged in as <%= link_to self.current_user.login, edit_user_path(self.current_user) %> 
-      <% else %>
-        <%= link_to "Log in", :controller => :session, :action => :new %>
-      <% end %>
+      <%= render :partial => "users/user_bar" %>
       </div>
       <div class="mainBody">
         <div id="page-home">
