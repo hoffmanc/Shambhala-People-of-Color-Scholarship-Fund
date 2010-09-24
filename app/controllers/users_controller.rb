@@ -1,7 +1,4 @@
 class UsersController < ApplicationController
-  # Protect these actions behind an admin login
-  # before_filter :admin_required, :only => [:suspend, :unsuspend, :destroy, :purge]
-  before_filter :find_user, :only => [:suspend, :unsuspend, :destroy, :purge]
 
   # render new.rhtml
   def new
@@ -10,7 +7,7 @@ class UsersController < ApplicationController
  
   def create
     logout_keeping_session!
-    @user = User.new(params[:user].select{|k,v| k != :isadmin})
+    @user = User.new(params[:user].delete_if{|k,v| k == :isadmin})
     @user.register! if @user && @user.valid?
     success = @user && @user.valid?
     if success && @user.errors.empty?
@@ -33,7 +30,8 @@ class UsersController < ApplicationController
   def update
     logout_keeping_session!
     @user = current_user
-    @user.update_attributes(params[:user].select{|k,v| k != :isadmin})
+    debugger
+    @user.update_attributes(params[:user].delete_if{|k,v| k == :isadmin})
     @user.save()
     if @user.errors.empty?
       redirect_back_or_default('/')

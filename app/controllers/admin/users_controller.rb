@@ -1,22 +1,26 @@
 class Admin::UsersController < ApplicationController
+  before_filter :find_user, :only => [:suspend, :unsuspend, :destroy, :purge]
+  after_filter :redirect_to_index, :only => [:suspend, :unsuspend, :destroy, :purge]
+  before_filter :admin_required
+  
   def suspend
     @user.suspend! 
-    redirect_to users_path
   end
 
   def unsuspend
     @user.unsuspend! 
-    redirect_to users_path
   end
 
   def destroy
     @user.delete!
-    redirect_to users_path
   end
 
   def purge
     @user.destroy
-    redirect_to users_path
+  end
+
+  def index
+    @users = User.find(:all)
   end
 
   def edit
@@ -39,5 +43,9 @@ class Admin::UsersController < ApplicationController
   protected
     def find_user
       @user = User.find(params[:id])
+    end
+
+    def redirect_to_index
+      redirect_to admin_users_path
     end
 end
