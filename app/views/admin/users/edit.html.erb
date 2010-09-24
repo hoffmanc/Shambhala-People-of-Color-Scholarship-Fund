@@ -1,0 +1,7 @@
+<h1>Edit User</h1>
+<%= error_messages_for :user %>
+<% form_for :user, :url => admin_user_path, :html => { :method => :put } do |f| -%>
+  <%= f.label :isadmin, "Is Admin?" %>
+  <%= f.check_box :isadmin %>
+  <%= render :partial => "users/form", :locals => { :action => "Edit", :f => f } %>
+<% end -%>

@@ -10,7 +10,7 @@ class UsersController < ApplicationController
  
   def create
     logout_keeping_session!
-    @user = User.new(params[:user])
+    @user = User.new(params[:user].select{|k,v| k != :isadmin})
     @user.register! if @user && @user.valid?
     success = @user && @user.valid?
     if success && @user.errors.empty?
@@ -27,13 +27,13 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   def update
     logout_keeping_session!
-    @user = User.find(params[:id])
-    @user.update_attributes(params[:user])
+    @user = current_user
+    @user.update_attributes(params[:user].select{|k,v| k != :isadmin})
     @user.save()
     if @user.errors.empty?
       redirect_back_or_default('/')
@@ -61,32 +61,4 @@ class UsersController < ApplicationController
     end
   end
 
-  def suspend
-    @user.suspend! 
-    redirect_to users_path
-  end
-
-  def unsuspend
-    @user.unsuspend! 
-    redirect_to users_path
-  end
-
-  def destroy
-    @user.delete!
-    redirect_to users_path
-  end
-
-  def purge
-    @user.destroy
-    redirect_to users_path
-  end
-  
-  # There's no page here to update or destroy a user.  If you add those, be
-  # smart -- make sure you check that the visitor is authorized to do so, that they
-  # supply their old password along with a new one to update it, etc.
-
-  protected
-    def find_user
-      @user = User.find(params[:id])
-    end
-  end
+end

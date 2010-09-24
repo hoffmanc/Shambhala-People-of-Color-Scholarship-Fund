@@ -9,7 +9,9 @@ class ApplicationController < ActionController::Base
   before_filter :initialize_site_template_vars
 
   # Scrub sensitive parameters from your log
-  # filter_parameter_logging :password
+  filter_parameter_logging :password
+
+  protected
   def initialize_site_template_vars
     @main_pages = Page.find(:all, :conditions => { :parent_id => nil })
     @conf = { :site_name => "Shambhala People of Color Scholarship Fund" }
