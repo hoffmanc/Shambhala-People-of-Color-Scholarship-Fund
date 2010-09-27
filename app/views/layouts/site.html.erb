@@ -30,7 +30,7 @@
     <div class="sidebar">
       <div class="subnav">
         <ul>
-        <% if logged_in? && current_user.isadmin  %>
+        <% if logged_in? && current_user.isadmin?  %>
         <%= link_to "Manage Users", admin_users_path %>
         <% end %>
         </ul>
