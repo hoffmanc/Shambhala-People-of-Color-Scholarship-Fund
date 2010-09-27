@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   layout 'site'
+  before_filter :admin_required, :only => [:index, :new, :edit, :create, :update, :destroy]
   # GET /pages
   # GET /pages.xml
   def index
