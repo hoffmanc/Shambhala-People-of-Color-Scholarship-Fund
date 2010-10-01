@@ -3,7 +3,7 @@
 </h1>
 
 <p>
-  <%=h @page.content %>
+  <%= @page.content %>
 </p>
 
 <% if logged_in? && current_user.isadmin? %>

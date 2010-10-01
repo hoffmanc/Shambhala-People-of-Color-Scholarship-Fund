@@ -6,6 +6,8 @@
   <%= stylesheet_link_tag 'main' %>
   <%= stylesheet_link_tag 'asmc' %>
   <%= stylesheet_link_tag 'site' %>
+  <%= yield(:head_section) %>
+  <%= include_yui_editor_if_used %>
 </head>
 <body>
 <div class="page">
@@ -44,7 +46,7 @@
       </div>
       <div class="mainBody">
         <div id="page-home">
-          <%= yield %>
+          <%= yield(:content_section) or yield %>
         </div>
       </div>
     </div>
