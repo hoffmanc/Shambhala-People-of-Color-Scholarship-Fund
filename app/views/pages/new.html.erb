@@ -9,11 +9,7 @@
   </p>
   <p>
     <%= f.label :content %><br />
-    <%= f.text_area :content %>
-  </p>
-  <p>
-    <%= f.label :parent_id %><br />
-    <%= collection_select(:page, :parent_id, Page.all, :id, :title, {:prompt => true}) %>
+    <%= f.text_area :content, :class => 'rich_text_editor' %>
   </p>
   <p>
     <%= f.submit 'Create' %>

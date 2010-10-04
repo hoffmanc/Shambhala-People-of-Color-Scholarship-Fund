@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   # GET /pages
   # GET /pages.xml
   def index
-    @pages = Page.all
+    @pages = Page.find(:all, :order => :position)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -81,6 +81,17 @@ class PagesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(pages_url) }
       format.xml  { head :ok }
+    end
+  end
+
+  [:higher,:lower,:to_top,:to_bottom].each do |method|
+    send :define_method, method do 
+      @page = Page.find(params[:id])
+      respond_to do |format|
+        @page.send("move_#{method}");
+        format.html { redirect_to(pages_url) }
+        format.xml  { render :xml => @pages }
+      end
     end
   end
 end

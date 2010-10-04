@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100924004625) do
+ActiveRecord::Schema.define(:version => 20101001225828) do
 
   create_table "pages", :force => true do |t|
     t.string   "title"
@@ -17,8 +17,7 @@ ActiveRecord::Schema.define(:version => 20100924004625) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "parent_id"
-    t.integer  "lft"
-    t.integer  "rgt"
+    t.integer  "position"
   end
 
   create_table "users", :force => true do |t|

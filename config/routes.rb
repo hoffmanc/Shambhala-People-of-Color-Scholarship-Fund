@@ -8,7 +8,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resource :session
 
-  map.resources :pages
+  map.resources :pages, :member => [:higher,:lower,:to_top,:to_bottom].inject({}) {|ha, a| ha[a] = :post; ha}
+
 
   # The priority is based upon order of creation: first created -> highest priority.
 

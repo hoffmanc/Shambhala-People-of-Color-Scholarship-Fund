@@ -18,3 +18,21 @@ div.error {
 div.warning {
   background-color: #ffbb77;
 }
+
+form.button-to ,
+form.button-to div {
+  display: inline;
+}
+
+form.button-to input {
+  cursor: pointer;
+  cursor: hand;
+  background-color: transparent;
+  border: 0;
+  color: #2266DD;
+}
+
+form.button-to input:hover {
+  text-decoration: underline;
+  color: #DF3801;
+}
