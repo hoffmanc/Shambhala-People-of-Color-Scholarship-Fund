@@ -37,6 +37,7 @@
         <% end %> 
         <% if logged_in? && current_user.isadmin  %>
         <li><%= link_to "Manage Users", admin_users_path %></li>
+        <li><%= link_to "Manage Pages", pages_path %></li>
         <% end %>
         </ul>
       </div>
