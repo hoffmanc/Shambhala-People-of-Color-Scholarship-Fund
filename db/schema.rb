@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101004015940) do
+ActiveRecord::Schema.define(:version => 20101004024114) do
 
   create_table "pages", :force => true do |t|
     t.string   "title"
@@ -18,6 +18,9 @@ ActiveRecord::Schema.define(:version => 20101004015940) do
     t.datetime "updated_at"
     t.integer  "position"
     t.string   "category"
+    t.string   "filename"
+    t.string   "content_type"
+    t.integer  "size"
   end
 
   create_table "users", :force => true do |t|

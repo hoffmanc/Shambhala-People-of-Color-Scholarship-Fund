@@ -1,6 +1,6 @@
 <h1>Editing page</h1>
 
-<% form_for(@page) do |f| %>
+<% form_for(@page, :html => {:multipart => true}) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -14,6 +14,10 @@
   <p>
     <%= f.label :content %><br />
     <%= f.text_area :content, :class => 'rich_text_editor' %>
+  </p>
+  <p>
+    <%= f.label :uploaded_data %> (e.g., pdf)<br />
+    <%= f.file_field :uploaded_data %>
   </p>
   <p>
     <%= f.submit 'Update' %>
