@@ -4,4 +4,11 @@ class Page < ActiveRecord::Base
                   :storage => :file_system, 
                   :path_prefix => "public/files"
   CATEGORIES = ["Top Menu", "Side Menu"]
+
+  #def full_filename(thumbnail = nil)
+  #  return nil if thumbnail_name_for(thumbnail).blank?
+  #  file_system_path = (thumbnail ? thumbnail_class : self).attachment_options[:path_prefix].to_s
+  #  File.join(RAILS_ROOT, file_system_path, *partitioned_path(thumbnail_name_for(thumbnail)))
+  #end
+
 end
