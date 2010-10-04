@@ -4,6 +4,10 @@
   <%= f.error_messages %>
 
   <p>
+    <%= f.label :category %><br />
+    <%= select :page, :category, Page::CATEGORIES.map{|c|[c,c]} %>
+  </p>
+  <p>
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </p>

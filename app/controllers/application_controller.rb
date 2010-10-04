@@ -15,7 +15,8 @@ class ApplicationController < ActionController::Base
 
   protected
   def initialize_site_template_vars
-    @main_pages = Page.find(:all, :conditions => { :parent_id => nil }, :order => :position)
+    @main_pages = Page.find(:all, :conditions => { :category => "Top Menu" }, :order => :position)
+    @side_pages = Page.find(:all, :conditions => { :category => "Side Menu" }, :order => :position)
     @conf = { :site_name => "Shambhala People of Color Scholarship Fund" }
   end
 

@@ -2,11 +2,13 @@
 
 <table>
   <tr>
+    <th>Category</th>
     <th>Title</th>
   </tr>
 
 <% @pages.each do |page| %>
   <tr>
+    <td><%=h page.category %></td>
     <td><%=h page.title %></td>
     <td>
       <% unless @pages.first.position == page.position %> 

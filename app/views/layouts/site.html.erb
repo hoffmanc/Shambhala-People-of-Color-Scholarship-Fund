@@ -32,8 +32,11 @@
     <div class="sidebar">
       <div class="subnav">
         <ul>
+        <% for page in @side_pages %>
+          <li><%= link_to page.title, page_path(page) %></li>
+        <% end %> 
         <% if logged_in? && current_user.isadmin  %>
-        <%= link_to "Manage Users", admin_users_path %>
+        <li><%= link_to "Manage Users", admin_users_path %></li>
         <% end %>
         </ul>
       </div>
