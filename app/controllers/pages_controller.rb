@@ -94,4 +94,10 @@ class PagesController < ApplicationController
       end
     end
   end
+
+  def file
+      @page = Page.find(params[:id])
+      send_data @page.db_file.data, :type => @page.content_type,
+        :filename => @page.filename, :disposition => 'inline'
+  end
 end

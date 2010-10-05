@@ -9,7 +9,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101004024114) do
+ActiveRecord::Schema.define(:version => 20101005034324) do
+
+  create_table "db_files", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.binary   "data"
+  end
 
   create_table "pages", :force => true do |t|
     t.string   "title"
@@ -21,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20101004024114) do
     t.string   "filename"
     t.string   "content_type"
     t.integer  "size"
+    t.integer  "db_file_id"
   end
 
   create_table "users", :force => true do |t|
