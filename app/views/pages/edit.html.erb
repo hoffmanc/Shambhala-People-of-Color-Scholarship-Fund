@@ -13,7 +13,7 @@
   </p>
   <p>
     <%= f.label :content %><br />
-    <%= f.text_area :content, :class => 'rich_text_editor' %>
+    <%= f.text_area :content, :class => params[:plain] ? '' : 'rich_text_editor' %>
   </p>
   <p>
     <%= f.label :uploaded_data %> (e.g., pdf)<br />
