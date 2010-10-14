@@ -109,7 +109,6 @@ a:hover, a:active {
 .logo a, .logo img, .wallpaper a, .wallpaper img {
 	display: block;
 	width: 100%;
-	height: 100%;	
 }
 
 .navigation {
