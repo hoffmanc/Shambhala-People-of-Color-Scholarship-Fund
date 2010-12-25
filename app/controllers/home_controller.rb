@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   layout 'site'
 
   def index
-    @page = Page.find_by_title('welcome')
+    @page = Page.find_by_title('Welcome')
 
     respond_to do |format|
       format.html { render :template => "pages/show" }
