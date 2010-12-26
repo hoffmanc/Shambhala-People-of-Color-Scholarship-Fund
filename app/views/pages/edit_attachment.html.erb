@@ -1,0 +1,16 @@
+<h1>Editing page</h1>
+
+<% form_for(@page, :html => {:multipart => true}) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :uploaded_data %> (e.g., pdf)<br />
+    <%= f.file_field :uploaded_data %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @page %> |
+<%= link_to 'List', pages_path %>

@@ -40,6 +40,10 @@ class PagesController < ApplicationController
     @page = Page.find(params[:id])
   end
 
+  def edit_attachment
+    @page = Page.find(params[:id])
+  end
+
   # POST /pages
   # POST /pages.xml
   def create

@@ -15,10 +15,16 @@
     <%= f.label :content %><br />
     <%= f.text_area :content, :class => params[:plain] ? '' : 'rich_text_editor' %>
   </p>
+<% if not @page.filename.nil? %>
   <p>
-    <%= f.label :uploaded_data %> (e.g., pdf)<br />
-    <%= f.file_field :uploaded_data %>
+    <%= link_to @page.filename, file_page_path(@page) %>
+    (
+    <%= link_to "Update", :controller => "pages", :action => "edit_attachment", :id => @page %>
+    )
   </p>
+<% else %>
+    <%= link_to "Add File", :controller => "pages", :action => "edit_attachment", :id => @page %>
+<% end %>
   <p>
     <%= f.submit 'Update' %>
   </p>
